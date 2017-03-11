@@ -6,9 +6,10 @@ db = TinyDB('./data/db.json')
 
 reddit = praw.Reddit('fallacybot', user_agent='fallacy.in bot by /u/hovancik')
 
-def reply_to(fallacy):
+def reply_text_for(fallacy):
+  """Construct the reply of bot for specific fallacy.""" 
   reply =  "## [" + fallacy['title']+ "]" + "(" + fallacy['link'] + ")\n" + \
-  fallacy['text'] + '\n#### Example: \n' + fallacy['example'] + '\n\n' + \
+  fallacy['text'] + "\n#### Example: \n" + fallacy['example'] + "\n\n" + \
   "*** \nHi, I'm bot. You can find more about me [here](https://fallacy.in/about.html)." 
   return reply.replace("<br/>","\n\n")	
   
@@ -32,7 +33,7 @@ for comment in subreddit.stream.comments():
       if starter + normalized_fallacy in normalized_comment:
         if not has_commented_on(comment):
            print("found comment " + comment.id + ": " + comment.body)
-           comment.reply(reply_to(fallacy))
+           comment.reply(reply_text_for(fallacy))
            set_as_commented(comment)
 
   
