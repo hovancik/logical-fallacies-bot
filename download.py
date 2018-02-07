@@ -12,6 +12,6 @@ try:
   with urllib.request.urlopen(req) as url, open('fallacies.json', 'w') as f:
     data = url.read().decode()
     f.write(data)
+    print('Done.')
 except HTTPError as ex:
     print(ex.read())
-
