@@ -29,7 +29,8 @@ def has_reply_on(comment):
 def set_as_replied_to(comment):
     """Save the Reddit comment's id and current UTC time to the DB to mark it as replied to"""
     with TinyDB(DB_FILE, storage=serialization) as db:
-        db.insert({'id': comment.id, 'created_at': None})
+        db.insert({'id': comment.id, 'created_at': datetime.datetime.utcnow(),
+                   'subreddit': comment.subreddit.display_name})
 
 
 def main():
