@@ -9,7 +9,7 @@ from urllib.error import HTTPError
 try:
   req = urllib.request.Request('https://fallacy.in/data/fallacies.json')
   req.add_header('User-Agent', 'Mozilla/5.0')
-  with urllib.request.urlopen(req) as url, open('fallacies.json', 'w') as f:
+  with urllib.request.urlopen(req) as url, open('data/fallacies.json', 'w') as f:
     data = url.read().decode()
     f.write(data)
     print('Done.')
