@@ -12,6 +12,9 @@ The bot watches comments in specified subreddits and tries to find the match. If
 Data are located [here](https://fallacy.in/data/fallacies.json).
 
 ## Code
-- praw.ini.example has the data needed to run bot correctly.
+
+We use docker and pipenv.
+
+- `praw.ini.example` has the data needed to run bot
 - `pipenv run python download.py` downloads data for bot
 - `pipenv run python bot.py` runs the bot
