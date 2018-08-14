@@ -1,6 +1,8 @@
 # logical-fallacies-bot
 Reddit bot for [Fallacy.in](https://fallacy.in)
 
+[![Become a Patron!](https://c5.patreon.com/external/logo/become_a_patron_button.png)](https://www.patreon.com/hovancik)
+
 ## What does it do?
 The main idea of this bot is to explain logical fallacies on Reddit, when invited to do so by some Reddit user.
 
