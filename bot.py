@@ -15,8 +15,8 @@ FALLACIES_FILE = './data/fallacies.json'
 
 def reply_text_for(fallacy):
     """Construct the reply of bot for specific fallacy."""
-    reply = "### [" + fallacy['title'] + "]" + "(" + fallacy['link'] + ")\n" + \
-        fallacy['text'] + "\n#### Example: \n" + fallacy['example'] + "\n\n" + \
+    reply = "**[" + fallacy['title'] + "]" + "(" + fallacy['link'] + ")**\n\n" + \
+        fallacy['text'] + "\n\n*Example*: \n" + fallacy['example'] + "\n\n" + \
         "*** \nHi, I'm bot. You can find more about me [here](https://fallacy.in/about.html)."
     return reply.replace("<br/>", "\n\n")
 
